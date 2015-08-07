@@ -1,5 +1,41 @@
 # offline-editor-js - Changelog
 
+## Version 2.11.0.1 - Aug. 6, 2015
+
+No breaking changes. Documentation and samples update, only. 
+
+**Enhancements**
+* Updated appcache-tiles.html and appcache-features.html to use ArcGIS JS API v3.14 and more recent versions of jQuery and Bootstrap.
+* Removed and replaced old application cache event detection code in appcache-tiles.html so that it's configured similar to appcache-features.html.
+* Updated the How to Use App Cache doc to clarify coding patterns for working with Safari 8.
+
+## Version 2.11 - July 30, 2015
+
+No breaking changes to the public API. This is a recommended update. This version is focused on improving the sync logic between the library and the feature service. Many internal-only breaking changes.
+
+**Enhancements**
+* Closes #361 - Deletes each database record after a successful sync rather than a batch database delete.
+* Added additional properties to the `goOnline()` sync process callback object to better capture any errors.
+* Improved error handling when submitting edits during sync.
+
+**Breaking Changes Internal - Private**
+* INTERNAL: `editStore.editExists()` - if an edit does not exist then the old error message "layer id is not a match" has been replaced with "objectId is not a match".
+* INTERNAL: `editStore.deleteFeatureLayerJSON()` - if the deletion was unsuccessful instead of returning `null` the method now returns a message string "object was not deleted".
+* INTERNAL: `editsStore.resetLimitedPhantomGraphicsQueue()` - Deprecated.
+* INTERNAL: `offlineFeaturesManager._cleanSuccessfulEditsDatabaseRecords()` - Deprecated and replaced by `_cleanDatabase()`.
+* INTERNAL: `offlineFeaturesManager._fieldSegment` - Deprecated.
+* INTERNAL: `offlineFeaturesManager._fileSegment` - Deprecated.
+* INTERNAL: `offlineFeaturesManager._internalApplyEdits()` - Deprecated.
+* INTERNAL: `offlineFeaturewsManager._internalApplyEditsFeaturecollection()` - renamed to `_internalApplyEditsAll()`.
+
+## Version 2.10 - July 27, 2015
+
+No breaking changes.
+
+**Enhancements**
+* Closes #288. Adds the ability to modify `offlineTilesEnabler` and `offlineTilesEnablerLayer` database name and data store name.
+* Updates to API and How-to Docs
+
 ## Version 2.9.5 - July 14, 2015
 
 No breaking changes.
