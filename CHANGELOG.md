@@ -1,5 +1,27 @@
 # offline-editor-js - Changelog
 
+## Version 2.13.0 - Aug. 10, 2015
+
+No breaking changes.  
+
+##Bug Fixes**
+* Closes #386 - getMinMaxLOD calculation
+* Closes #390 - In offlineFeatureManager, wait for pushPhantomGraphic callback before setting attributes and styles of phantom graphics.
+* For token based security, when syncing feature edits, provide direct access to the featureLayer.credentials.token instead of looping thru the kernel object (as introduced in v2.12.0)
+
+## Version 2.12.1 - Aug. 10, 2015
+
+##Enhancements**
+* Closes #388 - remove infoTemplate object from applyEdits request.  Now also removed from adds as well as updates.
+
+## Version 2.12
+
+No breaking changes.
+
+**Enhancements**
+* Adds support for token-based authentication when syncing feature edits.
+* Reduces POST request payload size when syncing edits by removing the InfoTemplate from request parameters.
+
 ## Version 2.11.0.1 - Aug. 6, 2015
 
 No breaking changes. Documentation and samples update, only. 
